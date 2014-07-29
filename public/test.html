@@ -7,10 +7,12 @@
 (function() {
     var options = {
         container    : '#comments',
-        site_key     : '9vdtj58u4j4ir74b1bkkbqhlxhcn7l0',
-        topic_key    : 'test',
+        site_key     : 'testkey',
+        topic_key    : location.pathname,
         topic_url    : location.href,
         topic_title  : document.title || location.href,
+        include_base : !window.Juvia,
+        include_css  : !window.Juvia,
         comment_order: 'latest-first'
     };
 
@@ -33,13 +35,13 @@
         }
 
         var result =
-            'http://0.0.0.0:3000/api/show_topic.js' +
+            'http://localhost:3000/api/show_topic.js' +
             '?_c=' + window._juviaRequestCounter +
             '&' + makeQueryString(options);
         window._juviaRequestCounter++;
         return result;
     }
-    
+
     var s       = document.createElement('script');
     s.async     = true;
     s.type      = 'text/javascript';

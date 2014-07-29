@@ -157,6 +157,12 @@ private
     result = Zlib::Inflate.inflate(str.unpack('m').first)
     result.force_encoding('utf-8') if result.respond_to?(:force_encoding)
     result
+  rescue Zlib::DataError
+    # I don't like that it forces us to compress using Zlib. Why? How long are
+    # comments that they need to be compressed!? This rescues Zlib errors and
+    # assumes that they are plain old strings. I am leaving the method in place
+    # to prevent regressions of existing features.
+    str
   end
 
   def log_exception(e)
