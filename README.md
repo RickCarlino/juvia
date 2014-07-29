@@ -3,4 +3,4 @@
 I don't want to use Zlib all the time.
 
 ## Make a Comment:
-![makecomment.png][makecomment.png]
+![https://raw.githubusercontent.com/rickcarlino/juvia/master/makecomment.png][https://raw.githubusercontent.com/rickcarlino/juvia/master/makecomment.png]
